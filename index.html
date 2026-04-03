@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuldeep Pandey | IoT & Full-Stack Developer</title>
+  <meta name="description"
+    content="Portfolio website for Kuldeep Pandey - IoT Developer, Embedded Systems Engineer, and Full-Stack Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #121a2b;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #eef2ff;
+      --muted: #aab4cf;
+      --accent: #60a5fa;
+      --accent-2: #22d3ee;
+      --success: #34d399;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(96, 165, 250, 0.18), transparent 25%),
+        radial-gradient(circle at 90% 10%, rgba(34, 211, 238, 0.16), transparent 20%),
+        linear-gradient(180deg, #08101c 0%, #0b1220 100%);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      margin: 0 0 14px;
+      line-height: 1.1;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.7;
+      margin: 0 0 36px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 16, 28, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 16px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #08101c;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: transparent;
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 80px 0 50px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.97;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #a5f3fc 45%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.04rem;
+      max-width: 720px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 16px;
+      padding: 14px 20px;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #04111b;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .stat p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 30px;
+      padding: 28px;
+      position: relative;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -30% auto;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.35), transparent 70%);
+      pointer-events: none;
+    }
+
+    .profile-box {
+      min-height: 420px;
+      border-radius: 26px;
+      padding: 24px;
+      background: rgba(9, 15, 26, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #05111b;
+      background: linear-gradient(135deg, #60a5fa, #22d3ee);
+      margin-bottom: 20px;
+    }
+
+    .profile-box h2 {
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+    }
+
+    .profile-role {
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .mini-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .skill-groups {
+      display: grid;
+      gap: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: #dbe7ff;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 22px;
+      border-left: 2px solid rgba(96, 165, 250, 0.25);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.12);
+    }
+
+    .timeline-item h4 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .timeline-meta {
+      color: var(--accent-2);
+      font-size: 0.92rem;
+      margin: 6px 0 10px;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 24px;
+      min-height: 100%;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96, 165, 250, 0.35);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .project-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(96, 165, 250, 0.12);
+      color: var(--accent-2);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0 0 18px;
+    }
+
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      font-size: 0.85rem;
+      color: #dff7ff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.16);
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: stretch;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 0.94rem;
+      color: #dbe7ff;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 14px 16px;
+      outline: none;
+      font: inherit;
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(96, 165, 250, 0.45);
+      box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.08);
+    }
+
+    .footer {
+      padding: 28px 0 46px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        position: absolute;
+        top: 74px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(8, 16, 28, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .quick-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">
+        <span class="logo-badge">KP</span>
+        <span>Kuldeep Pandey</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <div class="tag">IoT Developer • Embedded Systems • Full-Stack Web</div>
+          <h1>
+            Building <span class="gradient-text">smart connected products</span>
+            with code, electronics, and real-world impact.
+          </h1>
+          <p>
+            I’m Kuldeep Pandey, a developer focused on IoT systems, embedded development, and full-stack
+            applications. I enjoy turning practical ideas into responsive web platforms, ESP32-based smart
+            devices, and data-driven solutions that solve real operational problems.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View My Projects</a>
+            <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
+          </div>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <h3>60+</h3>
+              <p>IoT and embedded projects completed.</p>
+            </div>
+            <div class="stat">
+              <h3>90%</h3>
+              <p>Latency reduction in IoT pipeline work.</p>
+            </div>
+            <div class="stat">
+              <h3>80%</h3>
+              <p>Improved code reliability through best practices</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="profile-box">
+            <div>
+              <div class="avatar">KP</div>
+              <h2>Kuldeep Pandey</h2>
+              <div class="profile-role">Project Development Engineer</div>
+            </div>
+            <div class="mini-list">
+              <div class="mini-item">📍 Lucknow, Uttar Pradesh, India</div>
+              <div class="mini-item">⚙️ Focus: IoT, Embedded Systems, Web Development</div>
+              <div class="mini-item">🧠 Stack: ESP32, Arduino, Django, JavaScript, Python</div>
+              <div class="mini-item">🚀 Goal: Build reliable hardware-software products that scale</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="tag reveal">About Me</div>
+        <h2 class="section-title reveal">A portfolio designed around your strongest profile points</h2>
+        <p class="section-subtitle reveal">
+          Your profile stands out most when it emphasizes three themes together: embedded systems execution,
+          cloud-connected IoT products, and practical web application development. This portfolio is
+          structured to highlight that combination clearly for recruiters, founders, and clients.
+        </p>
+
+        <div class="grid about-grid">
+          <div class="card reveal">
+            <h3>Professional Summary</h3>
+            <p>
+              I work at the intersection of software and hardware, building intelligent systems that
+              combine sensors, microcontrollers, cloud communication, dashboards, and automation
+              workflows. My experience includes ESP32 and ESP8266 firmware, MQTT-based communication,
+              Raspberry Pi integration, full-stack web development, and data-centric problem solving.
+            </p>
+            <p>
+              I enjoy fast prototyping, real deployment, and creating solutions that are both technically
+              solid and user-friendly.
+            </p>
+          </div>
+
+          <div class="card reveal" id="skills">
+            <h3>Core Skills</h3>
+            <div class="skill-groups">
+              <div>
+                <strong>Programming</strong>
+                <div class="chips">
+                  <span class="chip">Java</span>
+                  <span class="chip">C</span>
+                  <span class="chip">Spring Boot</span>
+                  <span class="chip">Kotlin</span>
+                  <span class="chip">Python</span>
+                  <span class="chip">JavaScript</span>
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">SQL</span>
+                </div>
+              </div>
+              <div>
+                <strong>IoT & Embedded</strong>
+                <div class="chips">
+                  <span class="chip">ESP32 / ESP8266</span>
+                  <span class="chip">Arduino IDE</span>
+                  <span class="chip">Sensor Integration</span>
+                  <span class="chip">Raspberry Pi</span>
+                  <span class="chip">ESP-CAM</span>
+
+                </div>
+              </div>
+              <div>
+                <strong>Web & Data</strong>
+                <div class="chips">
+                  <span class="chip">Django</span>
+                  <span class="chip">REST APIs</span>
+                  <span class="chip">Bootstrap</span>
+                  <span class="chip">Firebase</span>
+                  <span class="chip">Pandas</span>
+                  <span class="chip">NumPy</span>
+                  <span class="chip">Matplotlib</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="tag reveal">Experience & Education</div>
+        <h2 class="section-title reveal">My journey in engineering and development</h2>
+        <p class="section-subtitle reveal">
+          This section helps recruiters quickly understand your current role, internship experience, and
+          academic path in electronics, computer science, and applied software development.
+        </p>
+
+        <div class="grid about-grid">
+          <div class="card reveal">
+            <h3>Work Experience</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h4>Research and Development Engineer</h4>
+                <div class="timeline-meta">KapYah Industries [P] Ltd. • Jan 2026 – Present</div>
+                <p>Architecting IoT solutions, building ESP32 firmware, integrating cloud platforms, and
+                  improving performance, code quality, and reliability across connected systems.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Project Development Engineer</h4>
+                <div class="timeline-meta">KapYah Industries [P] Ltd. • July 2025 – Dec 2025</div>
+                <p>Architecting IoT solutions, building ESP32 firmware, integrating cloud platforms, and
+                  improving performance, code quality, and reliability across connected systems.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Software Development Intern</h4>
+                <div class="timeline-meta">DigiCoders Technologies Pvt. Ltd. • August 2024 – September
+                  2024</div>
+                <p>Worked on modern web development, backend integration, authentication, APIs, and
+                  collaborative engineering workflows using Git and Agile practices.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h4>B.Tech in Computer Science</h4>
+                <div class="timeline-meta">Dr. A.P.J. Abdul Kalam Technical University • 2025 – 2028
+                  (Expected)</div>
+                <p>Advancing formal training in software engineering, systems design, and application
+                  development.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Diploma in Electronics & Communication Engineering</h4>
+                <div class="timeline-meta">Government Polytechnic Lucknow • 2022 – 2025</div>
+                <p>Built a strong foundation in embedded systems, electronics, devices, communication
+                  principles, and practical prototyping.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="tag reveal">Featured Projects</div>
+        <h2 class="section-title reveal">Projects that show breadth and real execution</h2>
+        <p class="section-subtitle reveal">
+          Your portfolio should lead with the projects that best communicate applied engineering ability.
+          These cards are intentionally written to show outcomes, technologies, and relevance to real-world
+          deployment.
+        </p>
+
+        <div class="grid projects-grid">
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Smart Home Automation System</h3>
+                <p>End-to-end IoT automation platform for controlling multiple appliances using embedded
+                  firmware, cloud communication, and a responsive control interface.</p>
+              </div>
+              <div class="project-icon">🏠</div>
+            </div>
+            <div class="chips">
+              <span class="chip">C++</span>
+              <span class="chip">Arduino</span>
+              <span class="chip">ESP8266</span>
+              <span class="chip">MQTT</span>
+              <span class="chip">React</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">8+ appliances</span>
+              <span class="metric">Voice control</span>
+              <span class="metric">Real-time dashboard</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Rain Monitoring and Automatic Protection System</h3>
+                <p>Built a rain detection setup using digital sensors, servo actuation, buzzer alerts,
+                  DHT11 readings, and cloud publishing to monitor weather-triggered device behavior in
+                  real time.</p>
+              </div>
+              <div class="project-icon">🌧️</div>
+            </div>
+            <div class="chips">
+              <span class="chip">ESP32</span>
+              <span class="chip">Arduino IDE</span>
+              <span class="chip">DHT11</span>
+              <span class="chip">Servo</span>
+              <span class="chip">Adafruit IO</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">Live monitoring</span>
+              <span class="metric">Sensor automation</span>
+              <span class="metric">Cloud dashboard</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Traffic Light Controller with Sensor Priority</h3>
+                <p>Designed a four-way traffic signal controller using Raspberry Pi and sensor-based
+                  logic to switch signal priority dynamically in real-world traffic conditions.</p>
+              </div>
+              <div class="project-icon">🚦</div>
+            </div>
+            <div class="chips">
+              <span class="chip">Raspberry Pi</span>
+              <span class="chip">Python</span>
+              <span class="chip">LDR Sensors</span>
+              <span class="chip">Automation</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">4-way logic</span>
+              <span class="metric">Sensor priority</span>
+              <span class="metric">Hardware control</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Arduino Based Obstacle Avoidance Robot</h3>
+                <p>Created an autonomous robot using Arduino, ultrasonic sensing, and motor driver
+                  control to detect nearby obstacles and change direction in real time.</p>
+              </div>
+              <div class="project-icon">🤖</div>
+            </div>
+            <div class="chips">
+              <span class="chip">Arduino Uno</span>
+              <span class="chip">Ultrasonic Sensor</span>
+              <span class="chip">L298N</span>
+              <span class="chip">Embedded C++</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">Autonomous motion</span>
+              <span class="metric">Distance sensing</span>
+              <span class="metric">Motor control</span>
+            </div>
+          </article>
+
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Industrial Environment Monitoring System</h3>
+                <p>Multi-sensor monitoring solution for tracking environmental conditions, syncing cloud
+                  data, and supporting predictive maintenance insights.</p>
+              </div>
+              <div class="project-icon">🏭</div>
+            </div>
+            <div class="chips">
+              <span class="chip">C++</span>
+              <span class="chip">Arduino</span>
+              <span class="chip">Python</span>
+              <span class="chip">Sensors</span>
+              <span class="chip">Firebase</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">Real-time sync</span>
+              <span class="metric">Alerts</span>
+              <span class="metric">25% downtime reduction</span>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Bluetooth Controlled Robotic Car</h3>
+                <p>Developed a mobile-controlled robotic vehicle using Arduino, HC-05 Bluetooth module, and motor
+                  drivers for directional movement and actuator control.</p>
+              </div>
+              <div class="project-icon">📡</div>
+            </div>
+            <div class="chips">
+              <span class="chip">Arduino</span>
+              <span class="chip">HC-05</span>
+              <span class="chip">L298N</span>
+              <span class="chip">BTS7960</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">Mobile control</span>
+              <span class="metric">Wireless commands</span>
+              <span class="metric">Dual motor drive</span>
+            </div>
+          </article>
+
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Full-Stack E-Commerce Platform</h3>
+                <p>Complete web application with authentication, product catalog, cart system, database
+                  integration, and scalable backend architecture.</p>
+              </div>
+              <div class="project-icon">🛒</div>
+            </div>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Django</span>
+              <span class="chip">MySQL / SQLite</span>
+              <span class="chip">React</span>
+              <span class="chip">Redux</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">Responsive UI</span>
+              <span class="metric">99.5% uptime</span>
+              <span class="metric">Cloud deployment</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <h3>Real-Time Traffic Monitoring System</h3>
+                <p>Computer vision based traffic analysis project using cameras, vehicle detection,
+                  counting logic, and API-based data transmission.</p>
+              </div>
+              <div class="project-icon">🚦</div>
+            </div>
+            <div class="chips">
+              <span class="chip">C++</span>
+              <span class="chip">OpenCV</span>
+              <span class="chip">Computer Vision</span>
+              <span class="chip">REST APIs</span>
+            </div>
+            <div class="metrics">
+              <span class="metric">92% accuracy</span>
+              <span class="metric">Vehicle detection</span>
+              <span class="metric">Optimized payloads</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="tag reveal">Get In Touch</div>
+        <h2 class="section-title reveal">Let’s build something impactful</h2>
+        <p class="section-subtitle reveal">
+          Whether it’s an embedded product, an IoT dashboard, a responsive web application, or a practical
+          automation idea, this contact section keeps the next step simple and direct.
+        </p>
+
+        <div class="grid contact-grid">
+          <div class="card reveal">
+            <h3>Contact Information</h3>
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:kuldeepofficial589@gmail.com">📧
+                kuldeepofficial589@gmail.com</a>
+              <a class="contact-item" href="tel:+918960383086">📞 +91 89603 83086</a>
+              <div class="contact-item">📍 Lucknow, Uttar Pradesh, India</div>
+              <a class="contact-item" href="https://www.linkedin.com/in/kuldeep-pandey-028857274/" target="_blank"
+                rel="noreferrer">🔗 LinkedIn Profile</a>
+              <a class="contact-item" href="https://github.com/kuldeeppandey6589" target="_blank" rel="noreferrer">💻
+                GitHub Profile</a>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Quick Message</h3>
+            <form class="contact-form" id="contactForm">
+              <div class="field">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="field">
+                <label for="email">Your Email</label>
+                <input id="email" name="email" type="email" placeholder="Enter your email" required>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project or opportunity"
+                  required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>© <span id="year"></span> Kuldeep Pandey. All rights reserved.</div>
+      <div>Designed for IoT, embedded systems, and full-stack opportunities.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navAnchors = [...document.querySelectorAll('.nav-links a')];
+    const sections = [...document.querySelectorAll('main section')];
+    const reveals = document.querySelectorAll('.reveal');
+    const year = document.getElementById('year');
+    const contactForm = document.getElementById('contactForm');
+
+    year.textContent = new Date().getFullYear();
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navAnchors.forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(item => revealObserver.observe(item));
+
+    const setActiveLink = () => {
+      let currentId = '';
+      sections.forEach(section => {
+        const offset = window.scrollY + 110;
+        if (offset >= section.offsetTop) currentId = section.id;
+      });
+
+      navAnchors.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+      });
+    };
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:kuldeepofficial589@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+
+</html>
